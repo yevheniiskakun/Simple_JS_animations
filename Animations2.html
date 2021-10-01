@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Simple JS animations 1
+        </title>
+    </head>
+    <body>
+        <div id="square" style="height: 100px; width: 100px; background-color: red; border-radius: 4px;">
+
+        </div>
+    </body>
+    <script>
+        var animated_div = document.getElementById('square');
+
+        var animation_duration = 30;
+        var animation_step = 4;
+        var position = 10;
+        var border = 500
+
+        animated_div.style.position = "absolute";
+
+        var id = setInterval(frame, animation_duration);
+
+        function frame() {       
+            if(position < border){
+                position+=animation_step;
+                animated_div.style.left = position+'px';
+            }
+            else{
+
+            }         
+        } 
+    </script>
+</html>
