@@ -2,34 +2,56 @@
 <html>
     <head>
         <title>
-            Simple JS animations 1
+           Hide show animation
         </title>
     </head>
     <body>
-        <div id="square" style="height: 100px; width: 100px; background-color: red; border-radius: 4px;">
+        <button onclick="hide('square');">Do it</button>
+        <div id="square" style="height: 200px; width: 100%; background-color: gray; border-radius: 4px;">
 
         </div>
+        
     </body>
     <script>
-        var animated_div = document.getElementById('square');
+       function hide(element_id) {
+            var x = document.getElementById(element_id);
+            
+            var animation_duration = 70;
+            var animation_step = 0.1;
 
-        var animation_duration = 30;
-        var animation_step = 4;
-        var position = 10;
-        var border = 500
+            if (x.style.display === "none") {
+                var opacity = 0;
 
-        animated_div.style.position = "absolute";
+                x.style.display = "block";
+                x.style.opacity = 0;
+                var id = setInterval(frame, animation_duration);
 
-        var id = setInterval(frame, animation_duration);
-
-        function frame() {       
-            if(position < border){
-                position+=animation_step;
-                animated_div.style.left = position+'px';
+                function frame() {
+                    if (opacity >= 1) {
+                    clearInterval(id);
+                    x.style.display = "block";
+                 
+                    } else {
+                    opacity+=animation_step;
+                    x.style.opacity = opacity;
+                    }
+                   
+                } 
+            } else {
+                var opacity = 1;
+                var id = setInterval(frame, animation_duration);
+                function frame() {
+                    if (opacity < 0.1) {
+                    clearInterval(id);
+                    x.style.display = "none";
+                    //document.getElementById("button_choose_confirm_deleting_wishes_container").style.display = "block";
+                    } else {
+                    opacity-=animation_step;
+                    x.style.opacity = opacity;
+                    //document.getElementById("button_choose_confirm_deleting_wishes_container").style.display = "block";
+                    }
             }
-            else{
-
-            }         
-        } 
+    }
+    }
     </script>
 </html>
