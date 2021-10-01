@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Simple JS animations 1
+        </title>
+    </head>
+    <body>
+        <div id="square" style="height: 100px; width: 100px; background-color: red; border-radius: 4px;">
+
+        </div>
+    </body>
+    <script>
+        var animated_div = document.getElementById('square');
+
+        var animation_duration = 30;
+        var animation_step = 5;
+        var start = 0;
+        var finish = 255
+
+        animated_div.style.background_color = "0";
+
+        var id = setInterval(frame, animation_duration);
+
+        function frame() {       
+            if(position < border){
+                
+                color_r+=animation_step;
+                color_g+=animation_step;
+                color_b+=animation_step;
+
+                animated_div.style.background_color = color_r + " " + color_g + " " + color_b;
+            }
+            else{
+
+            }         
+        } 
+    </script>
+</html>
