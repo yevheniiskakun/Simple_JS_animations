@@ -14,9 +14,12 @@
     </body>
     <script>
             var animated_div = document.getElementById('square');
-            var animation_duration = 30;
+            var animation_duration = 50;
             var animation_step = 1;
             var start = 0;
+            var start1 = 0;
+            var start2 = 0;
+            var start3 = 0;
             var finish = 255
 
             animated_div.style.backgroundColor = 'rgb(0, 0, 0)';
@@ -24,14 +27,77 @@
             var id = setInterval(frame, animation_duration);
 
             function frame() {       
-                if(start < finish){
 
+                if(start < finish){
                     start+=animation_step;
                     //color_g+=animation_step;
                     //color_b+=animation_step;
                     final_color = 'rgb(' + start + ',' + start + ',' + start + ')';
-                    console.log(final_color);
+                    //console.log(final_color);
                     animated_div.style.backgroundColor = final_color;
+                }
+                else{
+
+                }         
+            } 
+
+            var animated_div1 = document.getElementById('square1');
+
+            animated_div1.style.backgroundColor = 'rgb(0, 0, 0)';
+
+            var id = setInterval(frame1, animation_duration);
+
+            function frame1() {       
+
+                if(start1 < finish){
+                    start1+=animation_step;
+                    //color_g+=animation_step;
+                    //color_b+=animation_step;
+                    final_color1 = 'rgb(' + 0 + ',' + start1 + ',' + start1 + ')';
+                    //console.log(final_color);
+                    animated_div1.style.backgroundColor = final_color1;
+                }
+                else{
+
+                }         
+            } 
+
+            var animated_div2 = document.getElementById('square2');
+
+            animated_div2.style.backgroundColor = 'rgb(0, 0, 0)';
+
+            var id = setInterval(frame2, animation_duration);
+
+            function frame2() {       
+
+                if(start2 < finish){
+                    start2+=animation_step;
+                    //color_g+=animation_step;
+                    //color_b+=animation_step;
+                    final_color2 = 'rgb(' + start2 + ',' + 0 + ',' + start2 + ')';
+                    //console.log(final_color);
+                    animated_div2.style.backgroundColor = final_color2;
+                }
+                else{
+
+                }         
+            } 
+
+            var animated_div3 = document.getElementById('square3');
+
+            animated_div3.style.backgroundColor = 'rgb(0, 0, 0)';
+
+            var id = setInterval(frame3, animation_duration);
+
+            function frame3() {       
+
+                if(start3 < finish){
+                    start3+=animation_step;
+                    //color_g+=animation_step;
+                    //color_b+=animation_step;
+                    final_color3 = 'rgb(' + start3 + ',' + start3 + ',' + 0 + ')';
+                    //console.log(final_color);
+                    animated_div3.style.backgroundColor = final_color3;
                 }
                 else{
 
